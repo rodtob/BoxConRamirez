@@ -5,7 +5,7 @@
     <%-include('./partials/stylefavicon.ejs')%>
   </head>
   <body>
-  
+    <section class="contenedorApp">
   <%-include('./partials/menu.ejs')%>
   <%-include('./partials/campana.ejs')%>
   <section class="mainContenedor">
@@ -13,12 +13,9 @@
           <h2 class="nuestrosHorarios">Nuestros horarios</h2>
 
             <section class="cont__gridColumn">
-                  <p>horarios</p>
-                  <% for(const property in semana){ %> 
-                  <label for=""><%= property %></label>
-                  <% }%>
-              
+
                   <section class="cont__gridRow">
+                    <p>+</p>
                     <p>11hs</p>
                     <p>12hs</p>
                     <p>13hs</p>
@@ -26,8 +23,8 @@
                   </section>
                   <% for(const property in semana){ %> 
 
-                    <section id="contenendor" class="cont_gridRow" >
-                   
+                    <section class="cont__gridRow">
+                    <label class="dia" for=""><%= property %></label>
                     <p class="horarios--es--<%= semana[property].premediodia.disponible %>"><%= semana[property].premediodia.disponible %></p>
                     <p class="horarios--es--<%= semana[property].mediodia.disponible %>"><%= semana[property].mediodia.disponible %></p>
                     <p class="horarios--es--<%= semana[property].primeratarde.disponible %>"><%= semana[property].primeratarde.disponible %></p>
@@ -45,6 +42,7 @@
          
         <% } %> 
           <form class="elegiHorarios" action="/horarios" method="POST">
+            <section class="cont__diayhora">
             <select class="selectHorario" name="dia" id="">
               <option value="lunes">lunes</option>
               <option value="martes">martes</option>
@@ -58,10 +56,12 @@
               <option value="primeratarde">13hs</option>
               <option value="segundatarde">14hs</option>
             </select>
+          </section>
             <input type="submit" class="elsubmitHorarios"value="Dale nomás">
           </form>
       </article>
 </section>
 <%-include('./partials/footer.ejs')%>
+</section>
 </body>
 </html>

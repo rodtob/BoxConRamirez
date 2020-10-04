@@ -308,7 +308,6 @@
   justify-content: center;
   align-items: center;
   width: 70%;
-  height: 50vh;
   margin-top: 6%;
   padding-bottom: 2%;
 }
@@ -316,7 +315,7 @@
 .form--reg >*{
   font-family: 'fight';
   font-size: 1.2rem;
-  padding: 4%;
+  padding: 2%;
 }
 
 .cont__titl{
@@ -330,7 +329,7 @@
   /* all:unset; */
   height: 5%;
   width: 50%;
-  padding: 2.4%;
+  padding: 2.2%;
   background-color: #FF7171;
   font-family: 'fight';
   text-align: left;
@@ -408,7 +407,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 40%;
   height: 40vh;
 }
@@ -424,6 +423,15 @@
 .pie p{
   color: rgba(240, 240, 240, 0.7);
 }
+.cont__diayhora{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.dia{
+  padding: 4%;
+}
 
 .cont__grid{
   display: grid;
@@ -438,7 +446,6 @@
   display: grid;
   grid-gap: 1rem;
   width: 100%;
-  height: 10vh;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   font-family: 'fight';
@@ -450,7 +457,7 @@
   grid-gap: 1rem;
   width: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
 }
 
@@ -584,6 +591,8 @@
   padding: 2.5vh;
   font-family: 'fight';
   font-size: 1.5rem;
+  width: 25%;
+  text-align: center;
   transition: .3s all;
 }
 
@@ -708,12 +717,20 @@
   .menu__links.toggleCls{
     left: 0%;
   }
+
+  .campana__martillo.atrasCampana{
+    z-index: 1;
+    opacity: 0;
+  }
+
   .campana__martillo {
     cursor: pointer;
     position: relative;
     height: 12vh;
     width: 12vh;
     z-index: 2;
+    opacity: 1;
+    transition: .5s all;
 }
 
 .tituloPrin{
@@ -722,7 +739,7 @@
 }
 .epigraf{
   font-size: 2em;
-  width: 92%;
+  width: 95%;
 }
 .ramirez__contenedor{
   top: 33%;
@@ -739,6 +756,42 @@
 .opciones--anot--info a{
   font-size: 3.2em;
 
+}
+
+.contTabla{
+  margin-top: 10vh;
+  height: auto;
+}
+
+.cont__gridColumn{
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
+  font-family: 'fight';
+  font-size: 1.2rem;
+  text-align: center;
+}
+.elegiHorarios{
+  flex-direction: column;
+  padding: 2%;
+}
+
+.cont__diayhora{
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 12%;
+  padding-top: 12%;
+}
+
+.selectHorario{
+  width: 45%;
+}
+
+.elsubmitHorarios{
+  width: 46%;
 }
 
 }
