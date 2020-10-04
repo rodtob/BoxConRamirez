@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title  + ' login' %></title>
+    <%-include('./partials/stylefavicon.ejs')%>
+  </head>
+  <body>
+  
+  <%-include('./partials/menu.ejs')%>
+  <%-include('./partials/campana.ejs')%>
+<section class="mainContenedor">
+
+          <form action="/horarios/admin?_method=PUT" method="POST" class="cont__form">
+            <section class="cont__gridColumn">
+                  <p>horarios</p>
+                  <% for(const property in semana){ %> 
+                  <label for=""><%= property %></label>
+                  <% }%>
+              
+                  <section class="cont__gridRow">
+                    <p>11hs</p>
+                    <p>12hs</p>
+                    <p>13hs</p>
+                    <p>14hs</p>
+                  </section>
+                  <% for(const property in semana){ %> 
+
+                    <section id="contenendor" class="cont_gridRow" >
+                   
+
+                    <select class="elinputHorarios--es--<%= semana[property].premediodia.disponible %>" type="text" value="<%= semana[property].premediodia.disponible %>" name=<%= property + '_premediodia'%>>
+                      
+                      <option value="<%= semana[property].premediodia.disponible %>"><%= semana[property].premediodia.disponible %></option>
+                      <option value="ocupado">ocupado</option>
+                      <option value="libre">libre</option>
+
+                    </select>
+                     
+                    <select class="elinputHorarios--es--<%= semana[property].mediodia.disponible %>" type="text" value="<%= semana[property].mediodia.disponible %>" name=<%= property + '_mediodia'%>>
+                      
+                      <option value="<%= semana[property].mediodia.disponible %>"><%= semana[property].mediodia.disponible %></option>
+                      <option value="ocupado">ocupado</option>
+                      <option value="libre">libre</option>
+                      
+                    </select>
+                    
+                    <select class="elinputHorarios--es--<%= semana[property].primeratarde.disponible %>" type="text" value="<%= semana[property].primeratarde.disponible %>" name=<%= property + '_primeratarde'%>>
+                      
+                      <option value="<%= semana[property].primeratarde.disponible %>"><%= semana[property].primeratarde.disponible %></option>
+                      <option value="ocupado">ocupado</option>
+                      <option value="libre">libre</option>
+                      
+                    </select>
+
+                    <select class="elinputHorarios--es--<%= semana[property].segundatarde.disponible %>" type="text" value="<%= semana[property].segundatarde.disponible %>" name=<%= property + '_segundatarde'%>>
+                      
+                      <option value="<%= semana[property].segundatarde.disponible %>"><%= semana[property].segundatarde.disponible %></option>
+                      <option value="ocupado">ocupado</option>
+                      <option value="libre">libre</option>
+                      
+                    </select>
+        
+
+                    
+                  </section>
+              <% }%>
+              
+            </section>
+            <input class="elsubmitHorarios" type="submit" value="confirmar">
+          </form>
+</section>
+<%-include('./partials/footer.ejs')%>
+</body>
+</html>

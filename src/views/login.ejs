@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title  + ' login' %></title>
+    <%-include('./partials/stylefavicon.ejs')%>
+  </head>
+  <body>
+  <%-include('./partials/menu.ejs')%>
+  <%-include('./partials/campana.ejs')%>    
+<section class="mainContenedor">
+  
+   <section class="cont__log__errors">
+
+    
+        <% if(typeof errors != 'undefined') {%> 
+          <article class="cont__errors">
+            <p class="encontramos">Encontramos unos errores</p>
+            <ul>
+          <% for(let i=0; i< errors.length; i++){ %>
+            
+            <li class="error"><%= errors[i].msg %></li>
+          
+          <% } %>
+          </ul>
+          </article>
+         <% } %> 
+    
+      <article class="cont__log">
+          <h2 class="titl--sec">LOGIN</h2>
+          <img class="casco" src="/images/cascoBox.svg" alt="cabezal">
+          <form class="form--login" action="/users/login" method="POST">
+            <label for="">Usuario</label>
+            <input class="elinput" type="text" name="usuario" placeholder="ingresá tu usuario">
+            <label for="">Password</label>
+            <input class="elinput" type="password" name="password" placeholder="ingresá tu password">
+          
+            <input class="elsubmit" type="submit" value="ADELANTE">
+          </form>
+      </article>
+    </section>
+  
+
+</section>
+<%-include('./partials/footer.ejs')%>
+</body>
+</html>

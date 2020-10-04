@@ -1,0 +1,742 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+  list-style: none;
+  color:whitesmoke;
+  line-height: .7;
+}
+
+
+
+@font-face{
+  font-family: "fight";
+  src: url("/fonts/BOXING.otf");
+}
+
+@font-face{
+  font-family: "rfight";
+  src: url("/fonts/Fight.ttf");
+}
+
+@font-face{
+  font-family: "futura";
+  src: url("/fonts/Futura Heavy Italic.otf");
+}
+
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  font-family: 'rfight';
+  font-size: 1.5rem;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  z-index: 2;
+  height: 10vh;
+  align-items: center;
+  /* background-color: slateblue;*/
+  /* position: fixed;
+  top: 2%; */
+}
+
+
+.menu__links{
+  display: flex;
+  width: 100%;
+  align-items: center;
+	justify-content: space-between;
+}
+.menu a{
+  z-index: 4;
+}
+
+.hamburguer, .laX{
+  display: none;
+}
+
+.mainContenedor{
+  background-color: rgb(36, 36, 36);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 95vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2% ;
+  padding-bottom: 2%;
+  position: relative;
+}
+
+.cont__tit__guantes{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.tituloPrin{
+  display: flex;
+  width: 70%;
+  height: 80vh;
+  justify-content: center;
+  flex-direction: column;
+ 
+  color: aliceblue;
+  font-family: "rfight";
+  font-size: 1.2em;
+}
+
+.ramirez{
+  font-size: 10em;
+  letter-spacing: .4rem;
+  color: #FF7171;
+  width: 70%;
+  z-index: 1;
+  transition: .6s all;
+}
+
+.ramirez:hover{
+  color: rgb(188, 188, 189);
+}
+
+.ramirez__contenedor{
+ position: absolute;
+ right: 10%;
+ z-index: 1;
+  width: 30%;
+}
+
+.ramirez--img{
+  width: 100%;
+  transition: 1s all;
+}
+
+.ramirez--img:hover{
+  width: 105%;
+  transform:rotate(10deg);
+}
+
+.bellring{
+  z-index: 3;
+  height: 10vh;
+  width: 10vh;
+}
+
+.boxCon{
+  width: 50%;
+  display: flex;
+}
+
+.subBox:nth-child(1){
+  font-size: 9em;
+  align-self: center;
+  transition: .4s all;
+}
+
+.subBox:nth-child(1):hover{
+  color: #acacac;
+}
+
+.subBox:nth-child(2){
+  padding-left: 5%;
+  font-size: 5em;
+  align-self: center;
+  transition: .4s all;
+}
+.subBox:nth-child(2):hover{
+  color: #e78f8f;
+}
+
+.epigraf{
+  font-size: 1.3em;
+  width: 70%;
+  margin-top: 3vh;
+  font-family: "futura";
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.opciones--anot--info{
+  display: flex;
+  flex-direction: row;
+  padding-top: 5%;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.opciones--anot--info a{
+  border-radius: 4%;
+  background-color: #FF7171;
+  padding: .3rem;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+  transition: 1s all;
+}
+
+.opciones--anot--info a:hover{
+  background-color: #4d4747;
+  font-size: 1.6em;
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.horarioClase{
+  display: flex;
+  width: 30%;
+  padding: .3%;
+  font-family: 'futura';
+}
+.horarioClase p::first-letter {
+  text-transform: capitalize;
+}
+
+.cont__camp{
+  position: absolute;
+  height: 10vh;
+  right: 2%;
+  top: 2%;
+}
+
+.campana__martillo{
+  cursor: pointer;
+  position: relative;
+  height: 20vh;
+  width: 20vh;
+  z-index: 1;
+}
+
+.campana{
+  position: absolute;
+  right: 10%;
+}
+
+.martillo{
+  position: absolute;
+  width: 10%;
+  left: 8%;
+  bottom: 20%;
+  transform:rotate(-7deg);
+  transition: .4s all;
+}
+
+.campana__martillo:active .martillo{
+  transform:rotate(40deg);
+}
+
+.cont__log__errors{
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+
+.cont__log{
+  margin-top: 5vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.titl--sec{
+  font-family: 'fight';
+  font-size: 3.2vw;
+  justify-self: flex-start;
+  height: 5vh;
+  padding-bottom: 4%;
+  margin-bottom: 2%;
+}
+
+.casco{
+  width: 10%;
+  z-index: 0;
+  opacity: .5;
+  transition: .5s all;
+}
+
+.casco:hover{
+  width: 10.5%;
+  opacity: 1;
+}
+
+.guantes{
+  width: 70%;
+  z-index: 0;
+  opacity: .5;
+  transition: .5s all;
+}
+
+.guantes:hover{
+  transform:rotate(-20deg);
+  opacity: 1;
+}
+
+.form--login{
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.form--login >*{
+  font-family: 'fight';
+  font-size: 2.5vw;
+  padding: 4%;
+}
+
+.form--reg{
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50vh;
+  margin-top: 6%;
+  padding-bottom: 2%;
+}
+
+.form--reg >*{
+  font-family: 'fight';
+  font-size: 1.2rem;
+  padding: 4%;
+}
+
+.cont__titl{
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+}
+
+.elinput{
+  /* all:unset; */
+  height: 5%;
+  width: 50%;
+  padding: 2.4%;
+  background-color: #FF7171;
+  font-family: 'fight';
+  text-align: left;
+  font-size: 1.2rem;
+  border-style: none;
+}
+
+
+
+.elinputHorarios{
+  all:unset;
+  height: 5vh;
+  width: 100%;
+  padding: 2%;
+  background-color: #FF7171;
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+
+.elsubmit{
+
+  all: unset;
+  margin-top: 4%;
+  cursor: pointer;
+  color: #FF7171;
+  background-color: rgb(54, 48, 48);
+  padding: 2.5vh;
+  font-family: 'fight';
+  font-size: 1.5rem;
+  transition: .3s all;
+}
+
+
+.elsubmitHorarios{
+
+  all: unset;
+  cursor: pointer;
+  color: #FF7171;
+  background-color: rgb(58, 52, 52);
+  padding: 2.5vh;
+  font-family: 'fight';
+  font-size: 1.4rem;
+  transition: .3s all;
+  text-align: center;
+  width: 20%;
+  /* position: absolute;
+  bottom: 10%; */
+}
+
+
+
+.elsubmit:hover{
+  color: #000;
+  background-color: rgb(255, 255, 255);
+  padding: 2.7vh;
+}
+
+.elsubmit:active{
+  color: rgb(94, 184, 94);
+  padding: 3vh;
+  background-color: black;
+}
+
+.cont__reg{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.titl--guantes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 40%;
+  height: 40vh;
+}
+
+.pie{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'fight';
+  background-color: rgb(49, 49, 49);
+}
+.pie p{
+  color: rgba(240, 240, 240, 0.7);
+}
+
+.cont__grid{
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  height: 50vh;
+  grid-template-columns: .4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .2fr 1fr 1fr 1fr 1fr
+}
+
+.cont__gridColumn{
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  height: 10vh;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  font-family: 'fight';
+  font-size: 1.2rem;
+  text-align: center;
+}
+.cont__gridRow{
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.elinputHorarios--es--ocupado{
+  all:unset;
+  height: 5vh;
+  width: 100%;
+  padding: 2%;
+  color: rgb(250, 164, 164);
+  background-color:  #4b4747;
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1rem;
+}
+
+.elinputHorarios--es--libre{
+  all:unset;
+  height: 5vh;
+  width: 100%;
+  padding: 2%;
+  background-color: #18925f;
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1rem;
+}
+.horarios--es--libre{
+  height: 5vh;
+  width: 100%;
+  padding: 10%;
+  background-color: #18925f;
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1rem;
+}
+
+.horarios--es--ocupado{
+  height: 5vh;
+  width: 100%;
+  padding: 10%;
+  color: rgb(250, 164, 164);
+  background-color:  #4b4747;
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1rem;
+}
+
+.contTabla{
+  height: 50vh;
+}
+
+.nuestrosHorarios{
+  font-family: 'futura';
+  align-self: center;
+  height: 10vh;
+}
+
+.cont__form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  position: relative;
+}
+
+.cont__errors{
+  display: flex;
+  flex-direction: column;
+  font-family: 'futura';
+  align-items: center;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 2rem;
+  width: 40%;
+  padding-bottom: 2%;
+}
+
+.encontramos{
+  margin-bottom: 10vh;
+  line-height: 2rem;
+  color: #921818;
+}
+
+.listaErrors{
+  width: 70%;
+  text-align: left;
+}
+
+.error{
+  list-style-type: square;
+  line-height: 2rem;
+  font-size: 1.4rem;
+}
+
+.unHorario{
+  display: flex;
+  justify-content: center;
+  font-family: 'futura';
+  line-height: 1.4rem;
+}
+
+
+.elegiHorarios{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.selectHorario{
+  /* all:unset; */
+  height: 40%;
+  width: 30%;
+  padding: .4%;
+  background-color: #18925f;
+  color: rgb(68, 67, 67);
+  font-family: 'fight';
+  text-align: center;
+  font-size: 1.2rem;
+  border-style: none;
+  letter-spacing: .2rem;
+}
+
+.elsubmitHorarios{
+
+  all: unset;
+  cursor: pointer;
+  color: #FF7171;
+  background-color: rgb(54, 48, 48);
+  padding: 2.5vh;
+  font-family: 'fight';
+  font-size: 1.5rem;
+  transition: .3s all;
+}
+
+
+@media (max-width: 768px){
+  .mainContenedor{
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      /* min-height: 95vh; */
+      /* padding-left: 10%; */
+      /* padding-right: 10%; */
+      /* padding-top: 2%; */
+      /* padding-bottom: 2%; */
+      position: relative;
+  }
+
+  .cont__log{
+    width: 100%;
+    height: 80vh;
+  }
+  .form--login{
+    width: 100%;
+  }
+
+  .elinput{
+    height: 19%;
+    width: 86%;
+    font-size: 4.2vw;
+  }
+  .titl--sec{
+    font-size: 8.2vw;
+  }
+  .casco{
+    margin-top: 2vw;
+    width: 25%;
+  }
+
+  .casco:hover{
+    width: 27%;
+  }
+  .form--login > * {
+    font-family: 'fight';
+    font-size: 6.5vw;
+    padding: 2vh;
+}
+  .elsubmit{
+    margin-top: 20%;
+}
+  .cont__log__errors{
+    flex-direction: column;
+  }
+
+  .cont__errors{
+    margin-top: 20vh;
+    text-align: center;
+    width: 80%;
+  }
+
+  .cont__reg{
+    flex-direction: column;
+    margin-top: 10vh;
+  }
+
+  .titl--guantes{
+    height: 20vh;
+  }
+  .guantes{
+    margin-top: 10%;
+  }
+
+  .form--reg {
+    /* all: unset; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 92%;
+    height: unset;
+    /* margin-top: 6%; */
+    /* padding-bottom: 2%; */
+  }
+
+  .hamburguer{
+    cursor: pointer;
+    display: flex;
+    font-size: 2.4rem;
+    position: absolute;
+    top: 43%;
+    left: 6%;
+  }
+
+  .menu__links {
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 0%;
+    height: 90vh;
+    background: #868484;
+    width: 90%;
+    padding-bottom: 5%;
+    position: absolute;
+    top: 0%;
+    left: -100%;
+    font-size: 2.2rem;
+    align-items: flex-start;
+    justify-content: space-around;
+    transition: .4s all;
+  }
+
+  .laX{
+    cursor: pointer;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 10%;
+    transition: .4s all;
+  }
+
+  .laX:hover{
+    transform: rotate(90deg);
+  }
+
+  .menu__links.toggleCls{
+    left: 0%;
+  }
+  .campana__martillo {
+    cursor: pointer;
+    position: relative;
+    height: 12vh;
+    width: 12vh;
+    z-index: 2;
+}
+
+.tituloPrin{
+  font-size: 0.6em;
+  width: 100%;
+}
+.epigraf{
+  font-size: 2em;
+  width: 92%;
+}
+.ramirez__contenedor{
+  top: 33%;
+}
+.ramirez{
+  width: 100%;
+}
+
+.opciones--anot--info{
+  width: 90%;
+  position: absolute;
+  bottom: 10%;
+}
+.opciones--anot--info a{
+  font-size: 3.2em;
+
+}
+
+}

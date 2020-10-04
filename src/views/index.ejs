@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%-include('./partials/stylefavicon.ejs')%>
+  </head>
+  <body>
+    <%-include('./partials/menu.ejs')%>
+
+    <%-include('./partials/campana.ejs')%>
+
+    <section class="mainContenedor">
+
+  <section class="cont__tit__guantes">
+    
+    <article class="tituloPrin">
+      <div class="boxCon">
+        <section class="subBox">BOX</section>
+        <section class="subBox">con</section>
+      </div>
+      <h2 class="ramirez">RAMIREZ</h2>
+      <p class="epigraf"> aprendé con un experto</p>
+
+      <article class="opciones--anot--info">
+        <a href="/users/registro">+ Anotate</a>
+        <a href="">+ Info</a>
+      </article> 
+    </article>
+
+    <figure class="ramirez__contenedor">
+        <img class="ramirez--img" src="/images/boxinggloves.svg" alt="guantes">
+    </figure>
+
+  </section>
+    
+  <% if(typeof errors == 'undefined') {%> 
+    <section class="horarioClase">
+      <p><%= usuario.nombre %> tu clase comienza...</p>
+    </section>
+  <% } %> 
+   
+  
+
+</section>
+<%-include('./partials/footer.ejs')%>
+
+  </body>
+</html>

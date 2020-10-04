@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= ' registro' %></title>
+    <%-include('./partials/stylefavicon.ejs')%>
+  </head>
+  <body>
+    <%-include('./partials/menu.ejs')%>
+
+    <%-include('./partials/campana.ejs')%>
+<section class="mainContenedor">
+
+   
+  <section class="cont__reg">
+    <% if (typeof errors != 'undefined'){ %> 
+     <section class="cont__errors">
+       <p class="encontramos">Encontramos algunos errores</p>
+        <ul class="listaErrors">
+      <%for(let i =0; i < errors.length; i++){  %>
+       <li class="error"><%= errors[i].msg%></li><% }%> 
+       </ul> </section> 
+     <% } else{ %>
+   <article class="titl--guantes">
+     <!-- <section class="cont__titl"> -->
+      <h2 class="titl--sec">REGISTRO</h2>
+     <!-- </section> -->
+    <img class="guantes" src="/images/boxinggloves.svg" alt="cabezal">
+   </article> 
+   <%}%>  
+    
+  <form class="form--reg" action="/users/registro" method="POST">
+    <label for="">Nombre</label>
+    <input class="elinput" type="text" name="nombre" placeholder="ingresá tu nombre">
+    <label for="">Apellido</label>
+    <input class="elinput" type="text" name="apellido" placeholder="ingresá tu apellido">
+    <label for="">Edad</label>
+    <input class="elinput" type="number" name="edad" placeholder="ingresá tu edad">
+    <label for="">Usuario</label>
+    <input class="elinput" type="text" name="usuario" placeholder="nombre de usuario">
+    
+    <label for="">Email</label>
+    <input class="elinput" type="email" name="email" placeholder="tu email">
+    
+    
+    <label for="">Password</label>
+    <input class="elinput" type="password" name="password" placeholder="ingresá tu password">
+    <label for="">Confirmá tu password</label>
+    <input class="elinput" type="password" name="repassword" placeholder="ingresá tu password">
+    
+    <input class="elsubmit" type="submit" value="SUMATE">
+    
+  </form>
+</section>
+
+</section>
+<%-include('./partials/footer.ejs')%>
+
+  </body>
+</html>

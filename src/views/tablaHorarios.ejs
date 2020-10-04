@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title  + ' login' %></title>
+    <%-include('./partials/stylefavicon.ejs')%>
+  </head>
+  <body>
+  
+  <%-include('./partials/menu.ejs')%>
+  <%-include('./partials/campana.ejs')%>
+  <section class="mainContenedor">
+        <section class="contTabla">
+          <h2 class="nuestrosHorarios">Nuestros horarios</h2>
+
+            <section class="cont__gridColumn">
+                  <p>horarios</p>
+                  <% for(const property in semana){ %> 
+                  <label for=""><%= property %></label>
+                  <% }%>
+              
+                  <section class="cont__gridRow">
+                    <p>11hs</p>
+                    <p>12hs</p>
+                    <p>13hs</p>
+                    <p>14hs</p>
+                  </section>
+                  <% for(const property in semana){ %> 
+
+                    <section id="contenendor" class="cont_gridRow" >
+                   
+                    <p class="horarios--es--<%= semana[property].premediodia.disponible %>"><%= semana[property].premediodia.disponible %></p>
+                    <p class="horarios--es--<%= semana[property].mediodia.disponible %>"><%= semana[property].mediodia.disponible %></p>
+                    <p class="horarios--es--<%= semana[property].primeratarde.disponible %>"><%= semana[property].primeratarde.disponible %></p>
+                    <p class="horarios--es--<%= semana[property].segundatarde.disponible %>"><%= semana[property].segundatarde.disponible %></p>
+                    
+                    
+                  </section>
+              <% }%>
+            </section>
+       </section>
+       <article class="elegiHorarios">
+        <% if(typeof usuario != 'undefined') {%> 
+    
+            <h3 class="unHorario"><%= usuario.nombre +' ' %>elegí un horario...</h3>
+         
+        <% } %> 
+          <form class="elegiHorarios" action="/horarios" method="POST">
+            <select class="selectHorario" name="dia" id="">
+              <option value="lunes">lunes</option>
+              <option value="martes">martes</option>
+              <option value="miercoles">miercoles</option>
+              <option value="jueves">jueves</option>
+              <option value="viernes">viernes</option>
+            </select>
+            <select class="selectHorario" name="horario" id="">
+              <option value="premediodia">11hs</option>
+              <option value="mediodia">12hs</option>
+              <option value="primeratarde">13hs</option>
+              <option value="segundatarde">14hs</option>
+            </select>
+            <input type="submit" class="elsubmitHorarios"value="Dale nomás">
+          </form>
+      </article>
+</section>
+<%-include('./partials/footer.ejs')%>
+</body>
+</html>
