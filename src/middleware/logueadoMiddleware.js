@@ -8,5 +8,4 @@ const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'))
 
 module.exports = [ 
 
-
 ]

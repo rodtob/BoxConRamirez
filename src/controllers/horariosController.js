@@ -5,6 +5,10 @@ const path = require('path')
 const tablaFilePath = path.join(__dirname + '/../data/horarios.json')
 const tablaHorarios = JSON.parse(fs.readFileSync(tablaFilePath, 'utf-8'))
 
+const usuariosFilePath = path.join(__dirname + '/../data/usuarios.json')
+const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'))
+
+
 // let lunes = tablaHorarios.find(element => element.dia == 'lunes')
 // let martes = tablaHorarios.find(element => element.dia == 'martes')
 // let miercoles = tablaHorarios.find(element => element.dia == 'miercoles')
@@ -23,8 +27,24 @@ module.exports = {
     },
 
     anotarse: (req,res)=> {
-        res.send('vine por post')
-    },
+        // let usuarioAsumarHora = usuarios.find(element => element.usuario == req.session.usuario)       
+        let horarioAchequear = tablaHorarios[req.body.dia][req.body.horario]
+        if(horarioAchequear.disponible == 'ocupado'){
+            res.send('ya está ocupado')
+            // res.render('tablaHorarios', {yaOcupado: 'ocupado'})
+        } else{
+
+            tablaHorarios[req.body.dia][req.body.horario].alumnos.push(req.session.elusuario.usuario)
+            fs.writeFileSync(tablaFilePath, JSON.stringify(tablaHorarios))
+            res.send('felicitaciones, te anotaste al horario de'+ req.body.dia + req.body.horario)
+            // res.send(tablaHorarios)
+
+        }
+
+        // console.log(diaAchequear)
+        // let horaAchequear = horarios.find(element => element.)
+        // if()
+     },
     actualizar: (req,res)=>{
 
         function repetirTabla(dia){
