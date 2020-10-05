@@ -97,7 +97,7 @@
 }
 
 .ramirez{
-  font-size: 10em;
+  font-size: 20vw;
   letter-spacing: .4rem;
   color: #FF7171;
   width: 70%;
@@ -110,7 +110,7 @@
 }
 
 .ramirez__contenedor{
- position: absolute;
+ /* position: absolute; */
  right: 10%;
  z-index: 1;
   width: 30%;
@@ -163,6 +163,7 @@
   margin-top: 3vh;
   font-family: "futura";
   text-transform: uppercase;
+  line-height: 1.2rem;
   z-index: 1;
 }
 
@@ -194,7 +195,7 @@
 
 .horarioClase{
   display: flex;
-  width: 30%;
+  width: 50%;
   padding: .3%;
   font-family: 'futura';
 }
@@ -792,6 +793,13 @@
 
 .elsubmitHorarios{
   width: 46%;
+}
+
+.horarioClase{
+  width: 100%;
+}
+.horarioClase p{
+  line-height: 2rem;
 }
 
 }

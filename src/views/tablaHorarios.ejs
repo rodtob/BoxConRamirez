@@ -10,6 +10,12 @@
   <%-include('./partials/campana.ejs')%>
   <section class="mainContenedor">
         <section class="contTabla">
+
+          <% if(typeof ocupado != 'undefined') {%> 
+            <section class="horarioClase">
+              <p><%= ocupado.dia %> en el horario <%= ocupado.horario %> está ocupado </p>
+            </section>
+          <% } %>
           <h2 class="nuestrosHorarios">Nuestros horarios</h2>
 
             <section class="cont__gridColumn">

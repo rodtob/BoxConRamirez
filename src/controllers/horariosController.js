@@ -26,12 +26,33 @@ module.exports = {
         res.render('admintablaHorarios', { title: 'horarios', semana: tablaHorarios })
     },
 
-    anotarse: (req,res)=> {
-        // let usuarioAsumarHora = usuarios.find(element => element.usuario == req.session.usuario)       
+    anotarse: (req,res)=> {      
+       
+       if(typeof req.session.elusuario == "undefined"){
+           res.render('login', {title: 'login'})
+       } else{
+
         let horarioAchequear = tablaHorarios[req.body.dia][req.body.horario]
+ 
+    
         if(horarioAchequear.disponible == 'ocupado'){
-            res.send('ya está ocupado')
-            // res.render('tablaHorarios', {yaOcupado: 'ocupado'})
+            switch(req.body.horario){
+                case 'premediodia':
+                    req.body.horario = '11hs';
+                case 'mediodia':
+                    req.body.horario = '12hs';
+                case 'primeratarde':
+                    req.body.horario = '13hs';
+                case 'segundatarde':
+                    req.body.horario = '14hs'
+            }
+            let diaElegido = {
+                dia: req.body.dia,
+                horario: req.body.horario
+            }
+            res.render('tablaHorarios',{title: 'horarios', semana:tablaHorarios,
+             usuario: req.session.elusuario, ocupado: diaElegido})
+            
         } else{
 
             tablaHorarios[req.body.dia][req.body.horario].alumnos.push(req.session.elusuario.usuario)
@@ -41,15 +62,25 @@ module.exports = {
             }
             fs.writeFileSync(tablaFilePath, JSON.stringify(tablaHorarios))
             req.session.elusuario.dia = req.body.dia
+           
+            switch(req.body.horario){
+                case 'premediodia':
+                    req.body.horario = '11hs';
+                case 'mediodia':
+                    req.body.horario = '12hs';
+                case 'primeratarde':
+                    req.body.horario = '13hs';
+                case 'segundatarde':
+                    req.body.horario = '14hs'
+            }
+
             req.session.elusuario.horario = req.body.horario
         
             res.render('index',{title: 'Ramirez Box', usuario: req.session.elusuario})
 
         }
 
-        // console.log(diaAchequear)
-        // let horaAchequear = horarios.find(element => element.)
-        // if()
+     } 
      },
     actualizar: (req,res)=>{
 

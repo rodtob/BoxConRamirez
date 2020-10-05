@@ -35,8 +35,7 @@
     
   <% if(typeof errors == 'undefined' && typeof usuario.horario != 'undefined') {%> 
     <section class="horarioClase">
-      <p><%= usuario.nombre %> tu clase comienza...</p>
-      <p><%= 'el' + usuario.dia + ' ' + usuario.horario  %> </p>
+      <p><%= usuario.nombre %> tu clase comienza el <%= usuario.dia %>  <%= usuario.horario %> </p>
     </section>
   <% } else if(typeof errors == 'undefined') {%> 
     <section class="horarioClase">
