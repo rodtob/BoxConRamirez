@@ -35,9 +35,15 @@ module.exports = {
         } else{
 
             tablaHorarios[req.body.dia][req.body.horario].alumnos.push(req.session.elusuario.usuario)
+            console.log(tablaHorarios[req.body.dia][req.body.horario].alumnos.length)
+            if (tablaHorarios[req.body.dia][req.body.horario].alumnos.length >= 3){
+                tablaHorarios[req.body.dia][req.body.horario].disponible = 'ocupado'
+            }
             fs.writeFileSync(tablaFilePath, JSON.stringify(tablaHorarios))
-            res.send('felicitaciones, te anotaste al horario de'+ req.body.dia + req.body.horario)
-            // res.send(tablaHorarios)
+            req.session.elusuario.dia = req.body.dia
+            req.session.elusuario.horario = req.body.horario
+        
+            res.render('index',{title: 'Ramirez Box', usuario: req.session.elusuario})
 
         }
 
