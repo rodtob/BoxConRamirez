@@ -12,7 +12,7 @@
         <section class="contTabla">
 
           <% if(typeof ocupado != 'undefined') {%> 
-            <section class="horarioClase">
+            <section class="ocupadoClase">
               <p><%= ocupado.dia %> en el horario <%= ocupado.horario %> está ocupado </p>
             </section>
           <% } %>
@@ -44,12 +44,13 @@
        <article class="elegiHorarios">
         <% if(typeof usuario != 'undefined') {%> 
     
-            <h3 class="unHorario"><%= usuario.nombre +' ' %>elegí un horario...</h3>
+            <p class="unHorario"><%=usuario.nombre.charAt(0).toUpperCase() + usuario.nombre.slice(1) +' ' %>elegí un horario...</p>
          
         <% } %> 
           <form class="elegiHorarios" action="/horarios" method="POST">
             <section class="cont__diayhora">
             <select class="selectHorario" name="dia" id="">
+              <option value="" disabled selected>Día</option>
               <option value="lunes">lunes</option>
               <option value="martes">martes</option>
               <option value="miercoles">miercoles</option>
@@ -57,6 +58,7 @@
               <option value="viernes">viernes</option>
             </select>
             <select class="selectHorario" name="horario" id="">
+              <option value="" disabled selected>Horario</option>
               <option value="premediodia">11hs</option>
               <option value="mediodia">12hs</option>
               <option value="primeratarde">13hs</option>

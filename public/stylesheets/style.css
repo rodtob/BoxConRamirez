@@ -159,7 +159,7 @@
 
 .epigraf{
   font-size: 1.3em;
-  width: 70%;
+  width: 77%;
   margin-top: 3vh;
   font-family: "futura";
   text-transform: uppercase;
@@ -200,6 +200,18 @@
   font-family: 'futura';
 }
 .horarioClase p::first-letter {
+  text-transform: capitalize;
+}
+
+
+.ocupadoClase{
+  display: flex;
+  width: 50%;
+  color: #921818;
+  padding: .3%;
+  font-family: 'futura';
+}
+.ocupadoClase p::first-letter {
   text-transform: capitalize;
 }
 
@@ -592,7 +604,7 @@
   padding: 2.5vh;
   font-family: 'fight';
   font-size: 1.5rem;
-  width: 25%;
+  width: 30%;
   text-align: center;
   transition: .3s all;
 }
