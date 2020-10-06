@@ -26,7 +26,7 @@ module.exports = {
 
             nuevoUsuario.password = bcrypt.hashSync(req.body.password, 12)
             let newDb = [...usuarios, nuevoUsuario]
-            fs.writeFileSync(usuariosFilePath, JSON.stringify(newDb), null, 2)
+            fs.writeFileSync(usuariosFilePath, JSON.stringify(newDb),null,2)
             res.redirect('/')
         }else{
             res.render('registro', {errors: errors.errors})
