@@ -11,7 +11,7 @@ module.exports = [
 
     check("usuario", "usuario inexistente")
         .custom((value) => {
-            let nombreUsuario = usuarios.find(element => element.usuario == value)
+            let nombreUsuario = usuarios.find(element => element.usuario == value.toLowerCase())
             if (nombreUsuario == undefined) {
                 return false;
             } else {

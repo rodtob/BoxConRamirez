@@ -14,7 +14,7 @@ module.exports = {
     entrar: (req,res)=>{
         let errors = (validationResult(req))
         if (errors.isEmpty()){
-            let usuarioFormulario = req.body.usuario
+            let usuarioFormulario = req.body.usuario.toLowerCase()
             let usuarioIngresado = usuarios.find(element => element.usuario == usuarioFormulario)
             req.session.elusuario ={
                       usuario : usuarioIngresado.usuario,
