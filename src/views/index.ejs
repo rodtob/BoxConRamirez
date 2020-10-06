@@ -23,7 +23,7 @@
 
       <article class="opciones--anot--info">
         <a href="/users/registro">+ Anotate</a>
-        <a href="">+ Info</a>
+        <a href="#pie">+ Info</a>
       </article> 
     </article>
 
@@ -42,8 +42,27 @@
       <p><%= usuario.nombre %> tu clase comienza...</p>
     </section>
   <% } %>
-  
 
+  <section class="contenedor__slide" id="masInfo">
+
+  <article class="masInfo fade">
+    <img class="masInfo--img" src="/images/ilus_1.jpg" alt="ejemplo">
+    <p class="masInfo--info">El box es una de las disciplinas deportivas más completas</p>
+  </article>
+  <article class="masInfo fade">
+    <img class="masInfo--img" src="/images/ilus_2.jpg" alt="ejemplo">
+    <p class="masInfo--info">Agilidad, reflejos, fuerzas y resistencia</p>
+  </article>
+  <article class="masInfo fade">
+    <img class="masInfo--img" src="/images/ilus_3.jpg" alt="ejemplo">
+    <p class="masInfo--info">Libera tensiones y estrés. La practica del boxeo te ayudará a eliminar las tensiones acumuladas en el día a día</p>
+  </article>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+ 
+</section>
+<script src="/javascripts/slide.js"></script>
 </section>
 <%-include('./partials/footer.ejs')%>
 

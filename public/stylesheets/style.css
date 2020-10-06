@@ -58,6 +58,12 @@
 }
 .menu a{
   z-index: 4;
+  opacity: .7;
+  transition: .4s all;
+}
+
+.menu a:hover{
+  opacity: .9;
 }
 
 .hamburguer, .laX{
@@ -81,6 +87,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin-top: 10%;
 }
 
 
@@ -171,7 +178,7 @@
   display: flex;
   flex-direction: row;
   padding-top: 5%;
-  width: 30%;
+  width: 45%;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
@@ -610,6 +617,95 @@
 }
 
 
+.contenedor__slide{
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  margin-top: 10%;
+}
+
+.masInfo{
+  position: relative;
+  width: 100%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.masInfo--info{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 3rem;
+  font-family: 'futura';
+  font-size: 2.2rem;
+  opacity: .7;
+  transition: .7s all;
+}
+
+.masInfo--info:hover{
+  opacity: .9;
+}
+
+.masInfo--img{
+  opacity: .5;
+  border: #acacac 1px solid;
+  transition: .7s all;
+}
+
+.masInfo--img:hover{
+  opacity: .9;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
 @media (max-width: 768px){
   .mainContenedor{
       display: flex;
@@ -812,6 +908,14 @@
 }
 .horarioClase p{
   line-height: 2rem;
+}
+
+.masInfo--info{
+  width: 80%;
+  line-height: 2rem;
+  font-family: 'futura';
+  font-size: 1.2rem;
+
 }
 
 }
