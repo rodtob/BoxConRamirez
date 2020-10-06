@@ -39,12 +39,16 @@ module.exports = {
             switch(req.body.horario){
                 case 'premediodia':
                     req.body.horario = '11hs';
+                    break
                 case 'mediodia':
                     req.body.horario = '12hs';
+                    break
                 case 'primeratarde':
                     req.body.horario = '13hs';
+                    break
                 case 'segundatarde':
                     req.body.horario = '14hs'
+                    break
             }
             let diaElegido = {
                 dia: req.body.dia,
