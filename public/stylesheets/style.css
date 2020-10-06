@@ -178,7 +178,7 @@
 .opciones--anot--info{
   display: flex;
   flex-direction: row;
-  padding-top: 5%;
+  margin-top: 6%;
   width: 45%;
   justify-content: space-between;
   align-items: center;
@@ -206,6 +206,7 @@
   width: 50%;
   padding: .3%;
   font-family: 'futura';
+  margin-top: 2%;
 }
 .horarioClase p::first-letter {
   text-transform: capitalize;
@@ -916,7 +917,7 @@
   width: 80%;
   line-height: 2rem;
   font-family: 'futura';
-  font-size: 1.2rem;
+  font-size: .6rem;
 
 }
 
