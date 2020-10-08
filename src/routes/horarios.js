@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 const horariosController = require('../controllers/horariosController')
-const logueadoMiddleware = require('../middleware/logueadoMiddleware')
+const seradminMiddleware = require('../middleware/seradminMiddleware');
 
 
 router.get('/', horariosController.mostrar)
 
-router.post('/', logueadoMiddleware, horariosController.anotarse)
+router.post('/', horariosController.anotarse)
 
-router.get('/admin', horariosController.mostrarad);
+router.get('/admin', seradminMiddleware, horariosController.mostrarad);
 
 router.put('/admin', horariosController.actualizar)
   
