@@ -11,7 +11,7 @@ module.exports = [
             if (value !== req.body.repassword) {
                 return false
             } else {
-                return value;
+                return true;
             }
         })
 
