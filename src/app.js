@@ -3,20 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const sequelize = require("./data/db")
-const User = require('./data/models/User')
 const methodOverride = require('method-override')
 const session = require('express-session');
 
-
-// app.get('/sarasa', function(req,res){
-//   User.create({
-//     name:'Don Sarasa',
-//     fechaInicio: new Date(2020,7,4)
-//   }).then(user=>{
-//     res.json(user)
-//   })
-// })
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -57,5 +46,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
