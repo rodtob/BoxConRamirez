@@ -9,14 +9,14 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 
 
-app.get('/sarasa', function(req,res){
-  User.create({
-    name:'Don Sarasa',
-    fechaInicio: new Date(2020,7,4)
-  }).then(user=>{
-    res.json(user)
-  })
-})
+// app.get('/sarasa', function(req,res){
+//   User.create({
+//     name:'Don Sarasa',
+//     fechaInicio: new Date(2020,7,4)
+//   }).then(user=>{
+//     res.json(user)
+//   })
+// })
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
