@@ -23,7 +23,7 @@
       <p class="epigraf"> aprendé con un experto</p>
 
       <article class="opciones--anot--info">
-        <a href="/users/registro">+ Anotate</a>
+        <a href="/users/registro">+ Sumate</a>
         <a href="#pie">+ Info</a>
       </article> 
     </article>
@@ -35,8 +35,12 @@
   </section>
     
   <% if(typeof errors == 'undefined' && typeof usuario.horario != 'undefined') {%> 
-    <section class="horarioClase">
-      <p><%= usuario.nombre %> tu clase comienza el <%= usuario.dia %>  <%= usuario.horario %> </p>
+    <section class="cont__pop--horarioClase" onclick= "togglePopHorario()">
+      <article class="subCont__pop">
+        <p>Felicitaciones</p>
+        <p class="pop--horarioClase"><%= usuario.nombre %> tu clase comienza el <%= usuario.dia %>  <%= usuario.horario %> </p>
+        <p>&#9587</p>
+      </article>
     </section>
   <% } else if(typeof errors == 'undefined') {%> 
     <section class="horarioClase">
@@ -64,6 +68,7 @@
  
 </section>
 <script src="/javascripts/slide.js"></script>
+<script src="/javascripts/popHorario.js"></script>
 </section>
 <%-include('./partials/footer.ejs')%>
 </section>
